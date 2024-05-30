@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerador de Tabuada</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: linear-gradient(135deg, #47403b, #259dff);
+        color: rgb(21, 146, 196);
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+    table {
+        margin-top: 20px;
+        border-collapse: collapse;
+        width: 50%;
+        margin: auto;
+        background-color: #333;
+        color: white;
+    }
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px;
+    }
+    th {
+        background-color: #4CAF50;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Saibert Tabuadas</h2>
+    <input type="number" id="numInput" placeholder="Digite um número">
+    <button onclick="gerarTabuada()">Gerar Tabuada</button>
+    <br><br>
+    <table id="tabuadaTable"></table>
+</div>
+
+<script>
+function gerarTabuada() {
+    var num = document.getElementById("numInput").value;
+    var table = document.getElementById("tabuadaTable");
+    table.innerHTML = ""; // Limpa a tabela antes de gerar uma nova tabuada
+
+    for (var i = 1; i <= 10; i++) {
+        var row = table.insertRow();
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = num + " x " + i;
+        cell2.innerHTML = num * i;
+    }
+}
+</script>
+
+</body>
+</html>
+
